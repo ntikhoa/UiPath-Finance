@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fPA5AH7Sg25nthoHdmk1lDGNNrfOPqCLTTrr/iCX/UCrb39hyjP9MD9Bt3USpq4l0wF0kalCjGMJnw/1daPLPw==",
+  "dgSpecHash": "lBaB6SItKDR6JRbehhVY35BgYe/BMR1XmCUYyqxj9gcIor0Spv5w3ymXw2mdHiafwq2bT6C+lZqsFvGBUvjbDA==",
   "success": true,
-  "projectFilePath": "H:\\Tutorial\\UiPath\\25_TPB\\.local\\",
+  "projectFilePath": "H:\\Project\\UiPath Finance\\25_TPB\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\KHOA\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\KHOA\\.nuget\\packages\\credentialmanagement\\1.0.2\\credentialmanagement.1.0.2.nupkg.sha512",

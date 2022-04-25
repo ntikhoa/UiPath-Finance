@@ -7736,9 +7736,9 @@
     "restore": {
       "projectUniqueName": "UiPath Templates",
       "projectName": "UiPath Templates",
-      "projectPath": "C:\\Users\\KHOA\\Desktop\\UiPath Templates\\.local",
+      "projectPath": "H:\\Project\\UiPath Finance\\Templates\\.local",
       "packagesPath": "C:\\Users\\KHOA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KHOA\\Desktop\\UiPath Templates\\.local"
+      "outputPath": "H:\\Project\\UiPath Finance\\Templates\\.local"
     },
     "frameworks": {
       "net461": {

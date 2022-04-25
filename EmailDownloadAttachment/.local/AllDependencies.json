@@ -7736,9 +7736,9 @@
     "restore": {
       "projectUniqueName": "EmailDownloadAttachment",
       "projectName": "EmailDownloadAttachment",
-      "projectPath": "H:\\Tutorial\\UiPath\\EmailDownloadAttachment\\.local",
+      "projectPath": "H:\\Project\\UiPath Finance\\EmailDownloadAttachment\\.local",
       "packagesPath": "C:\\Users\\KHOA\\.nuget\\packages\\",
-      "outputPath": "H:\\Tutorial\\UiPath\\EmailDownloadAttachment\\.local"
+      "outputPath": "H:\\Project\\UiPath Finance\\EmailDownloadAttachment\\.local"
     },
     "frameworks": {
       "net461": {

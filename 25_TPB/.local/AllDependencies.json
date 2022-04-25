@@ -7736,9 +7736,9 @@
     "restore": {
       "projectUniqueName": "25_TPB",
       "projectName": "25_TPB",
-      "projectPath": "H:\\Tutorial\\UiPath\\25_TPB\\.local",
+      "projectPath": "H:\\Project\\UiPath Finance\\25_TPB\\.local",
       "packagesPath": "C:\\Users\\KHOA\\.nuget\\packages\\",
-      "outputPath": "H:\\Tutorial\\UiPath\\25_TPB\\.local"
+      "outputPath": "H:\\Project\\UiPath Finance\\25_TPB\\.local"
     },
     "frameworks": {
       "net461": {

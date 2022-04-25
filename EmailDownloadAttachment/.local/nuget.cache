@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vBqvVh/xKBTJ3T66d0lTCiMvt4/wTdcz0AnLYpIB0bNZ+8qDu67lCzsmFM8Ge3YDGEgekYPS2sBTL9lBW+aTkg==",
+  "dgSpecHash": "I1Lt6jiZ8ogJw0VMFqHmBaEsV+0TRfk/sv25DqdlDhNeEeK194TSbW3sZ3d0N19Y/KQI0nNHyU9NS2t6j+MUcQ==",
   "success": true,
-  "projectFilePath": "H:\\Tutorial\\UiPath\\EmailDownloadAttachment\\.local\\",
+  "projectFilePath": "H:\\Project\\UiPath Finance\\EmailDownloadAttachment\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\KHOA\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\KHOA\\.nuget\\packages\\credentialmanagement\\1.0.2\\credentialmanagement.1.0.2.nupkg.sha512",

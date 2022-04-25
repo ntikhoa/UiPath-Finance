@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "isDiRLAy0Yhtwcplxl1HZFCoPALJyWS4CRKrLUDldFPzflOtgn3kVKwkd4uDfgCvmr0KnClxxStkI3o+i/AMpQ==",
+  "dgSpecHash": "u3DNOb1XK3f5UOOESTENMz/Glm+Q/osiA7EIEkiQ6bVR6mCU9c4Pd5zZTXRmyvJsYye4gycU1cPTiEij2q4VUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\KHOA\\Desktop\\UiPath Templates\\.local\\",
+  "projectFilePath": "H:\\Project\\UiPath Finance\\Templates\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\KHOA\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\KHOA\\.nuget\\packages\\credentialmanagement\\1.0.2\\credentialmanagement.1.0.2.nupkg.sha512",
