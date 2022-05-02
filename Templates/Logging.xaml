@@ -4,7 +4,7 @@
     <x:Property Name="logs" Type="InOutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>755.2,424</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>389.6,217.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -88,7 +88,7 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">
-          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">logs + System.Environment.NewLine + System.DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss") +": " + message;</mca:CSharpValue>
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">logs + System.Environment.NewLine + System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss") +": " + message;</mca:CSharpValue>
         </InArgument>
       </Assign.Value>
     </Assign>

@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="797.6,968.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="94">
+    <scg:List x:TypeArguments="x:String" Capacity="48">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -52,7 +52,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="90">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -370,34 +370,9 @@
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart DisplayName="Main Flow Chart" sap:VirtualizedContainerService.HintSize="697.6,881.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
             <Flowchart.Variables>
-              <Variable x:TypeArguments="x:String" Name="hostname">
-                <Variable.Default>
-                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">Environment.MachineName</mca:CSharpValue>
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="x:String" Name="serialNo" />
-              <Variable x:TypeArguments="x:String" Name="VATNo" />
-              <Variable x:TypeArguments="x:String" Name="seller">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String" Value="" />
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="x:String" Name="taxCode">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String" Value="" />
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="x:String" Name="content">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String" Value="" />
-                </Variable.Default>
-              </Variable>
-              <Variable x:TypeArguments="x:String" Name="amount" />
-              <Variable x:TypeArguments="x:String" Name="VATRate" />
-              <Variable x:TypeArguments="x:String" Name="VATAmount" />
-              <Variable x:TypeArguments="x:String" Name="dateTransaction" />
               <Variable x:TypeArguments="s:String[]" Name="fileList" />
               <Variable x:TypeArguments="sd:DataTable" Name="dt" />
+              <Variable x:TypeArguments="x:String" Name="excelName" />
             </Flowchart.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -411,14 +386,14 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Flowchart.StartNode>
-              <x:Reference>__ReferenceID9</x:Reference>
+              <x:Reference>__ReferenceID11</x:Reference>
             </Flowchart.StartNode>
-            <FlowStep x:Name="__ReferenceID7">
+            <FlowStep x:Name="__ReferenceID8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">158.8,250</av:Point>
+                  <av:Point x:Key="ShapeLocation">158.8,320</av:Point>
                   <av:Size x:Key="ShapeSize">262.4,60</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">290,310 290,343.6</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">290,380 290,403.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
@@ -439,10 +414,10 @@
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID6">
+                <FlowStep x:Name="__ReferenceID7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">190,343.6</av:Point>
+                      <av:Point x:Key="ShapeLocation">190,403.6</av:Point>
                       <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -458,50 +433,81 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Flowchart sap:VirtualizedContainerService.HintSize="683.2,827.2" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+                          <Flowchart sap:VirtualizedContainerService.HintSize="633.6,663.2" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+                            <Flowchart.Variables>
+                              <Variable x:TypeArguments="x:String" Name="serialNo" />
+                              <Variable x:TypeArguments="x:String" Name="VATNo" />
+                              <Variable x:TypeArguments="x:String" Name="seller" />
+                              <Variable x:TypeArguments="x:String" Name="taxCode" />
+                              <Variable x:TypeArguments="x:String" Name="content" />
+                              <Variable x:TypeArguments="x:String" Name="amount" />
+                              <Variable x:TypeArguments="x:String" Name="VATRate" />
+                              <Variable x:TypeArguments="x:String" Name="VATAmount" />
+                              <Variable x:TypeArguments="x:String" Name="dateTransaction" />
+                            </Flowchart.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                                 <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-                                <x:Double x:Key="Height">790.39876444136689</x:Double>
-                                <x:Double x:Key="Width">650</x:Double>
-                                <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,115.6</av:PointCollection>
+                                <x:Double x:Key="Height">626.4</x:Double>
+                                <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,93.6</av:PointCollection>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <Flowchart.StartNode>
-                              <x:Reference>__ReferenceID5</x:Reference>
+                              <x:Reference>__ReferenceID6</x:Reference>
                             </Flowchart.StartNode>
                             <FlowStep x:Name="__ReferenceID0">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,465.6</av:Point>
+                                  <av:Point x:Key="ShapeLocation">200,485.6</av:Point>
                                   <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,534.4 300,563.6</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,554.4 300,573.6</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <Sequence DisplayName="Save Excel templates" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="sd:DataColumn[]" Name="dtc" />
+                                  <Variable x:TypeArguments="x:String" Name="pdfName" />
                                 </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_50" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_50" UnSafe="False" WorkflowFileName="Logging.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:String" x:Key="message">Saving into Excel</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="message">
+                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_281">"Saving: " + excelName</mca:CSharpValue>
+                                    </InArgument>
                                     <InOutArgument x:TypeArguments="x:String" x:Key="logs">
                                       <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_159">logs</mca:CSharpReference>
                                     </InOutArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
-                                <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,101.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                                  <ui:MultipleAssign.AssignOperations>
+                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_42">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_254">pdfName</mca:CSharpReference>
+                                          </OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_253">file.Split('\\').Last()</mca:CSharpValue>
+                                          </InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                    </scg:List>
+                                  </ui:MultipleAssign.AssignOperations>
+                                </ui:MultipleAssign>
+                                <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="430.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
                                   <ui:AddDataRow.ArrayRow>
                                     <InArgument x:TypeArguments="s:Object[]">
-                                      <mca:CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_143">new Object[] {"", serialNo, VATNo, dateTransaction, seller, taxCode, content, amount, VATRate, VATAmount, file}</mca:CSharpValue>
+                                      <mca:CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_250">new Object[] {"", serialNo, VATNo, dateTransaction, seller, taxCode, content, amount, VATRate, VATAmount, pdfName}</mca:CSharpValue>
                                     </InArgument>
                                   </ui:AddDataRow.ArrayRow>
                                   <ui:AddDataRow.DataTable>
@@ -510,7 +516,7 @@
                                     </InOutArgument>
                                   </ui:AddDataRow.DataTable>
                                 </ui:AddDataRow>
-                                <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1">
+                                <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="430.4,116" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1">
                                   <ui:WriteRange.DataTable>
                                     <InArgument x:TypeArguments="sd:DataTable">
                                       <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_136">dt</mca:CSharpValue>
@@ -518,7 +524,7 @@
                                   </ui:WriteRange.DataTable>
                                   <ui:WriteRange.WorkbookPath>
                                     <InArgument x:TypeArguments="x:String">
-                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_137">workDir + "\\" + "VAT_Extracted.xlsx"</mca:CSharpValue>
+                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_279">excelName</mca:CSharpValue>
                                     </InArgument>
                                   </ui:WriteRange.WorkbookPath>
                                 </ui:WriteRange>
@@ -527,7 +533,7 @@
                                 <FlowStep x:Name="__ReferenceID3">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">200,563.6</av:Point>
+                                      <av:Point x:Key="ShapeLocation">200,573.6</av:Point>
                                       <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -550,9 +556,9 @@
                             <FlowStep x:Name="__ReferenceID1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,303.6</av:Point>
+                                  <av:Point x:Key="ShapeLocation">200,323.6</av:Point>
                                   <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,356.4 300,375.6</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,376.4 300,395.6</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Close'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
@@ -586,9 +592,9 @@
                                 <FlowStep x:Name="__ReferenceID2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">200,375.6</av:Point>
+                                      <av:Point x:Key="ShapeLocation">200,395.6</av:Point>
                                       <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">300,444.4 300,465.6</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,464.4 300,485.6</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Sequence DisplayName="Preprocess results" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
@@ -605,84 +611,84 @@
                                         </InOutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
-                                    <Sequence DisplayName="Filter null" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                    <Sequence DisplayName="Filter null" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: serialNo" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_52" UnSafe="False" WorkflowFileName="CheckNull.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: serialNo" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_99" UnSafe="False" WorkflowFileName="CheckNull.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="x:String" x:Key="var">
-                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_161">serialNo</mca:CSharpReference>
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_285">serialNo</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: VATNo" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_53" UnSafe="False" WorkflowFileName="CheckNull.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: VATNo" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_100" UnSafe="False" WorkflowFileName="CheckNull.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="x:String" x:Key="var">
-                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_162">VATNo</mca:CSharpReference>
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_286">VATNo</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: dateTransaction" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_54" UnSafe="False" WorkflowFileName="CheckNull.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: dateTransaction" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_101" UnSafe="False" WorkflowFileName="CheckNull.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="x:String" x:Key="var">
-                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_163">dateTransaction</mca:CSharpReference>
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_287">dateTransaction</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: seller" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_70" UnSafe="False" WorkflowFileName="CheckNull.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: seller" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_102" UnSafe="False" WorkflowFileName="CheckNull.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="x:String" x:Key="var">
-                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_197">seller</mca:CSharpReference>
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_288">seller</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: taxCode" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_55" UnSafe="False" WorkflowFileName="CheckNull.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: taxCode" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_103" UnSafe="False" WorkflowFileName="CheckNull.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="x:String" x:Key="var">
-                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_164">taxCode</mca:CSharpReference>
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_289">taxCode</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: content" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_56" UnSafe="False" WorkflowFileName="CheckNull.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: content" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_104" UnSafe="False" WorkflowFileName="CheckNull.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="x:String" x:Key="var">
-                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_165">content</mca:CSharpReference>
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_290">content</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: amount" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_71" UnSafe="False" WorkflowFileName="CheckNull.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: amount" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_105" UnSafe="False" WorkflowFileName="CheckNull.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="x:String" x:Key="var">
-                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_198">amount</mca:CSharpReference>
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_291">amount</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: VATRate" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_57" UnSafe="False" WorkflowFileName="CheckNull.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: VATRate" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_106" UnSafe="False" WorkflowFileName="CheckNull.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="x:String" x:Key="var">
-                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_166">VATRate</mca:CSharpReference>
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_292">VATRate</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: VATAmount" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_58" UnSafe="False" WorkflowFileName="CheckNull.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckNull: VATAmount" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_107" UnSafe="False" WorkflowFileName="CheckNull.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="x:String" x:Key="var">
-                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_167">VATAmount</mca:CSharpReference>
+                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_293">VATAmount</mca:CSharpReference>
                                           </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
-                                    <ui:MultipleAssign DisplayName="Trim or merge values" sap:VirtualizedContainerService.HintSize="430.4,351.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+                                    <ui:MultipleAssign DisplayName="Trim or merge values" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                                       <ui:MultipleAssign.AssignOperations>
                                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">
-                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_168">serialNo</mca:CSharpReference>
+                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_276">serialNo</mca:CSharpReference>
                                               </OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
@@ -694,7 +700,7 @@
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">
-                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_169">VATNo</mca:CSharpReference>
+                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_277">VATNo</mca:CSharpReference>
                                               </OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
@@ -706,7 +712,7 @@
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">
-                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_170">dateTransaction</mca:CSharpReference>
+                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_278">dateTransaction</mca:CSharpReference>
                                               </OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
@@ -718,7 +724,7 @@
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">
-                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_171">seller</mca:CSharpReference>
+                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_279">seller</mca:CSharpReference>
                                               </OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
@@ -730,7 +736,7 @@
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_37">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">
-                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_172">taxCode</mca:CSharpReference>
+                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_280">taxCode</mca:CSharpReference>
                                               </OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
@@ -742,7 +748,7 @@
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">
-                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_173">content</mca:CSharpReference>
+                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_281">content</mca:CSharpReference>
                                               </OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
@@ -754,7 +760,7 @@
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_39">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">
-                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_174">amount</mca:CSharpReference>
+                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_282">amount</mca:CSharpReference>
                                               </OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
@@ -766,7 +772,7 @@
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">
-                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_175">VATRate</mca:CSharpReference>
+                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_283">VATRate</mca:CSharpReference>
                                               </OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
@@ -778,7 +784,7 @@
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">
-                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_176">VATAmount</mca:CSharpReference>
+                                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_284">VATAmount</mca:CSharpReference>
                                               </OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
@@ -806,9 +812,9 @@
                             <FlowStep x:Name="__ReferenceID5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,115.6</av:Point>
+                                  <av:Point x:Key="ShapeLocation">200,165.6</av:Point>
                                   <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,184.4 300,223.6</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,234.4 300,253.6</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <Sequence DisplayName="Open File and Normalize" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
@@ -878,9 +884,9 @@
                                 <FlowStep x:Name="__ReferenceID4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">200,223.6</av:Point>
+                                      <av:Point x:Key="ShapeLocation">200,253.6</av:Point>
                                       <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">300,276.4 300,303.6</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,306.4 300,323.6</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" ContinueOnError="True" CvMethod="ElementDetection, OCR" DesignTimeCacheId="bbd7f220-70c5-4419-a8fd-c9ae9ac31484" DisplayName="CV Screen Scope 'pane'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CVScope_8" Version="V5">
@@ -890,6 +896,19 @@
                                           <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                                         </ActivityAction.Argument>
                                         <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:Int32" Name="timeout" />
+                                          </Sequence.Variables>
+                                          <Assign sap:VirtualizedContainerService.HintSize="400,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_294">timeout</mca:CSharpReference>
+                                              </OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Int32">1000</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="False" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_90" UnSafe="False" WorkflowFileName="Logging.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <InArgument x:TypeArguments="x:String" x:Key="message">Getting Seller</InArgument>
@@ -916,6 +935,11 @@
                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_236">seller</mca:CSharpReference>
                                               </OutArgument>
                                             </p:CvGetTextWithDescriptor.Result>
+                                            <p:CvGetTextWithDescriptor.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_284">timeout</mca:CSharpValue>
+                                              </InArgument>
+                                            </p:CvGetTextWithDescriptor.TimeoutMS>
                                           </p:CvGetTextWithDescriptor>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_91" UnSafe="False" WorkflowFileName="Logging.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
@@ -949,6 +973,11 @@
                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_238">taxCode</mca:CSharpReference>
                                               </OutArgument>
                                             </p:CvGetTextWithDescriptor.Result>
+                                            <p:CvGetTextWithDescriptor.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_285">timeout</mca:CSharpValue>
+                                              </InArgument>
+                                            </p:CvGetTextWithDescriptor.TimeoutMS>
                                           </p:CvGetTextWithDescriptor>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_92" UnSafe="False" WorkflowFileName="Logging.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
@@ -982,6 +1011,11 @@
                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_240">serialNo</mca:CSharpReference>
                                               </OutArgument>
                                             </p:CvGetTextWithDescriptor.Result>
+                                            <p:CvGetTextWithDescriptor.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_286">timeout</mca:CSharpValue>
+                                              </InArgument>
+                                            </p:CvGetTextWithDescriptor.TimeoutMS>
                                           </p:CvGetTextWithDescriptor>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_93" UnSafe="False" WorkflowFileName="Logging.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
@@ -1015,6 +1049,11 @@
                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_242">VATNo</mca:CSharpReference>
                                               </OutArgument>
                                             </p:CvGetTextWithDescriptor.Result>
+                                            <p:CvGetTextWithDescriptor.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_287">timeout</mca:CSharpValue>
+                                              </InArgument>
+                                            </p:CvGetTextWithDescriptor.TimeoutMS>
                                           </p:CvGetTextWithDescriptor>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_94" UnSafe="False" WorkflowFileName="Logging.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
@@ -1048,6 +1087,11 @@
                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_244">dateTransaction</mca:CSharpReference>
                                               </OutArgument>
                                             </p:CvGetTextWithDescriptor.Result>
+                                            <p:CvGetTextWithDescriptor.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_288">timeout</mca:CSharpValue>
+                                              </InArgument>
+                                            </p:CvGetTextWithDescriptor.TimeoutMS>
                                           </p:CvGetTextWithDescriptor>
                                           <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'grouping'" sap:VirtualizedContainerService.HintSize="400,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_21" Key="pgdn" KeyModifiers="None" SpecialKey="True">
                                             <ui:SendHotkey.Target>
@@ -1093,6 +1137,11 @@
                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_246">content</mca:CSharpReference>
                                               </OutArgument>
                                             </p:CvGetTextWithDescriptor.Result>
+                                            <p:CvGetTextWithDescriptor.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_289">timeout</mca:CSharpValue>
+                                              </InArgument>
+                                            </p:CvGetTextWithDescriptor.TimeoutMS>
                                           </p:CvGetTextWithDescriptor>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_96" UnSafe="False" WorkflowFileName="Logging.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
@@ -1126,6 +1175,11 @@
                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_248">amount</mca:CSharpReference>
                                               </OutArgument>
                                             </p:CvGetTextWithDescriptor.Result>
+                                            <p:CvGetTextWithDescriptor.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_290">timeout</mca:CSharpValue>
+                                              </InArgument>
+                                            </p:CvGetTextWithDescriptor.TimeoutMS>
                                           </p:CvGetTextWithDescriptor>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_97" UnSafe="False" WorkflowFileName="Logging.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
@@ -1159,6 +1213,11 @@
                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_250">VATRate</mca:CSharpReference>
                                               </OutArgument>
                                             </p:CvGetTextWithDescriptor.Result>
+                                            <p:CvGetTextWithDescriptor.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_291">timeout</mca:CSharpValue>
+                                              </InArgument>
+                                            </p:CvGetTextWithDescriptor.TimeoutMS>
                                           </p:CvGetTextWithDescriptor>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_98" UnSafe="False" WorkflowFileName="Logging.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
@@ -1192,10 +1251,18 @@
                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_252">VATAmount</mca:CSharpReference>
                                               </OutArgument>
                                             </p:CvGetTextWithDescriptor.Result>
+                                            <p:CvGetTextWithDescriptor.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32">
+                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_292">timeout</mca:CSharpValue>
+                                              </InArgument>
+                                            </p:CvGetTextWithDescriptor.TimeoutMS>
                                           </p:CvGetTextWithDescriptor>
                                         </Sequence>
                                       </ActivityAction>
                                     </p:CVScope.Body>
+                                    <p:CVScope.DesignTimeCache>
+                                      <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+                                    </p:CVScope.DesignTimeCache>
                                     <p:CVScope.DesignTimeCacheContainer>
                                       <uc:CvCacheContainer>
                                         <uc:CvCacheContainer.Caches>
@@ -1834,11 +1901,7 @@
                                       </ActivityFunc>
                                     </p:CVScope.OCREngine>
                                     <p:CVScope.Target>
-                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7def3dba-3b68-4344-81da-398bf6bd787d" InformativeScreenshot="54ef7d4dada5359ad9fc51e5e48d2ec1" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='VPB363 T02.2022 01GTKT0001_YC20E_0011523_1646985513596.pdf - Per*' /&gt;&lt;ctrl name='VPB363 T02.2022 01GTKT0001_YC20E_0011523_1646985513596.pdf - Mic*' role='pane' /&gt;&lt;ctrl name='Microsoft Edge' role='pane' /&gt;&lt;ctrl idx='15' role='pane' /&gt;" WaitForReady="INTERACTIVE">
-                                        <ui:Target.TimeoutMS>
-                                          <InArgument x:TypeArguments="x:Int32" />
-                                        </ui:Target.TimeoutMS>
-                                      </ui:Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7def3dba-3b68-4344-81da-398bf6bd787d" InformativeScreenshot="54ef7d4dada5359ad9fc51e5e48d2ec1" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' omit:title='VPB363 T02.2022 01GTKT0001_YC20E_0011523_1646985513596.pdf - Per*' /&gt;&lt;ctrl omit:name='VPB363 T02.2022 01GTKT0001_YC20E_0011523_1646985513596.pdf - Mic*' role='pane' /&gt;&lt;ctrl name='Microsoft Edge' role='pane' /&gt;&lt;ctrl idx='15' role='pane' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
                                     </p:CVScope.Target>
                                     <p:CVScope.UseLocalServer>
                                       <InArgument x:TypeArguments="x:Boolean" />
@@ -1858,6 +1921,138 @@
                             <x:Reference>__ReferenceID2</x:Reference>
                             <x:Reference>__ReferenceID3</x:Reference>
                             <x:Reference>__ReferenceID4</x:Reference>
+                            <FlowStep x:Name="__ReferenceID6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">200,93.6</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,146.4 300,165.6</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MultipleAssign DisplayName="Clear values" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_44">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_267">serialNo</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_45">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_268">VATNo</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_46">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_269">dateTransaction</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_47">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_270">seller</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_48">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_271">taxCode</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_49">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_272">content</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_50">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_273">amount</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_51">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_274">VATRate</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_52">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">
+                                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_275">VATAmount</mca:CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:MultipleAssign>
+                              <FlowStep.Next>
+                                <x:Reference>__ReferenceID5</x:Reference>
+                              </FlowStep.Next>
+                            </FlowStep>
                           </Flowchart>
                         </Sequence>
                       </ActivityAction>
@@ -1871,13 +2066,13 @@
                 </FlowStep>
               </FlowStep.Next>
             </FlowStep>
-            <x:Reference>__ReferenceID6</x:Reference>
-            <FlowStep x:Name="__ReferenceID9">
+            <x:Reference>__ReferenceID7</x:Reference>
+            <FlowStep x:Name="__ReferenceID11">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">190,93.6</av:Point>
                   <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">290,146.4 290,173.6</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">290,146.4 290,170</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;STT&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Ký_x0020_hiệu_x0020_hóa_x0020_đơn&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Số_x0020_hóa_x0020_đơn&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Ngày_x002C__x0020_tháng_x002C__x0020_năm_x0020_phát_x0020_hành&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Tên_x0020_người_x0020_bán&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Mã_x0020_số_x0020_thuế_x0020_người_x0020_bán&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Mặt_x0020_hàng&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Doanh_x0020_số_x0020_mua_x0020_chưa_x0020_có_x0020_thuế&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Thuế_x0020_Suất&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Thuế_x0020_GTGT&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Ghi_x0020_chú&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
@@ -1888,34 +2083,63 @@
                 </ui:BuildDataTable.DataTable>
               </ui:BuildDataTable>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID8">
+                <FlowStep x:Name="__ReferenceID10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">190,173.6</av:Point>
-                      <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">290,226.4 290,250</av:PointCollection>
+                      <av:Point x:Key="ShapeLocation">158.8,170</av:Point>
+                      <av:Size x:Key="ShapeSize">262.4,60</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">290,230 290,253.6</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Logging.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="message">Loading pdf files</InArgument>
-                      <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                        <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_146">logs</mca:CSharpReference>
-                      </InOutArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
+                  <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_256">excelName</mca:CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_293">workDir + System.DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss").Replace(":", "'") + ".xlsx"</mca:CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:InvokeWorkflowFile>
+                  </Assign>
                   <FlowStep.Next>
-                    <x:Reference>__ReferenceID7</x:Reference>
+                    <FlowStep x:Name="__ReferenceID9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">190,253.6</av:Point>
+                          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">290,306.4 290,320</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Logging.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="message">Loading pdf files</InArgument>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_146">logs</mca:CSharpReference>
+                          </InOutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                      <FlowStep.Next>
+                        <x:Reference>__ReferenceID8</x:Reference>
+                      </FlowStep.Next>
+                    </FlowStep>
                   </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
             </FlowStep>
-            <x:Reference>__ReferenceID8</x:Reference>
+            <x:Reference>__ReferenceID9</x:Reference>
+            <x:Reference>__ReferenceID10</x:Reference>
           </Flowchart>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log Complete" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Logging.xaml">
             <ui:InvokeWorkflowFile.Arguments>
