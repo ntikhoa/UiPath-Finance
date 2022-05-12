@@ -98,7 +98,6 @@
       <AssemblyReference>Microsoft.Office.Interop.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -433,7 +432,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Flowchart sap:VirtualizedContainerService.HintSize="693.6,827.2" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+                          <Flowchart sap:VirtualizedContainerService.HintSize="633.6,772.8" sap2010:WorkflowViewState.IdRef="Flowchart_3">
                             <Flowchart.Variables>
                               <Variable x:TypeArguments="x:String" Name="serialNo" />
                               <Variable x:TypeArguments="x:String" Name="VATNo" />
@@ -452,8 +451,7 @@
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                                 <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-                                <x:Double x:Key="Height">790.39876444136689</x:Double>
-                                <x:Double x:Key="Width">660</x:Double>
+                                <x:Double x:Key="Height">736.4</x:Double>
                                 <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,113.6</av:PointCollection>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
@@ -709,7 +707,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">300,584.4 300,595.6</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Preprocess results" sap:VirtualizedContainerService.HintSize="375.2,500.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                  <Sequence DisplayName="Preprocess results" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:String" Name="temp" />
                                     </Sequence.Variables>
@@ -1140,7 +1138,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">300,336.4 300,363.6</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="Jj5og8ykBrs8JjCkYv86AENx42HlNjargmGu2OYCxsxEp6Mybn229naoKaff+vyF7gA29svlKJ4EvLCu4e7rVg==" ContinueOnError="False" CvMethod="ElementDetection, OCR" DesignTimeCacheId="90a94144-4baa-4798-a0f9-573a446e74bc" DisplayName="CV Screen Scope 'grouping'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CVScope_6" Version="V5">
+                                  <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="Jj5og8ykBrs8JjCkYv86AENx42HlNjargmGu2OYCxsxEp6Mybn229naoKaff+vyF7gA29svlKJ4EvLCu4e7rVg==" ContinueOnError="True" CvMethod="ElementDetection, OCR" DesignTimeCacheId="90a94144-4baa-4798-a0f9-573a446e74bc" DisplayName="CV Screen Scope 'grouping'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CVScope_6" Version="V5">
                                     <p:CVScope.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
@@ -2634,7 +2632,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="241.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
