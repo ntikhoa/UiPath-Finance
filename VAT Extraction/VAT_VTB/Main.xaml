@@ -98,6 +98,7 @@
       <AssemblyReference>Microsoft.Office.Interop.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -367,11 +368,12 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Flowchart DisplayName="Main Flow Chart" sap:VirtualizedContainerService.HintSize="697.6,881.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+          <Flowchart DisplayName="Main Flow Chart" sap:VirtualizedContainerService.HintSize="633.6,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
             <Flowchart.Variables>
               <Variable x:TypeArguments="s:String[]" Name="fileList" />
               <Variable x:TypeArguments="sd:DataTable" Name="dt" />
               <Variable x:TypeArguments="x:String" Name="excelName" />
+              <Variable x:TypeArguments="x:String" Name="cvApiKey" />
             </Flowchart.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -380,19 +382,17 @@
                 <av:Size x:Key="ShapeSize">60,75.2</av:Size>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 <av:PointCollection x:Key="ConnectorLocation">290,77.6 290,93.6</av:PointCollection>
-                <x:Double x:Key="Height">844.4</x:Double>
-                <x:Double x:Key="Width">664</x:Double>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Flowchart.StartNode>
-              <x:Reference>__ReferenceID12</x:Reference>
+              <x:Reference>__ReferenceID13</x:Reference>
             </Flowchart.StartNode>
             <FlowStep x:Name="__ReferenceID9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">158.8,330</av:Point>
+                  <av:Point x:Key="ShapeLocation">158.8,420</av:Point>
                   <av:Size x:Key="ShapeSize">262.4,60</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">290,390 290,423.6</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">290,480 290,513.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
@@ -416,7 +416,7 @@
                 <FlowStep x:Name="__ReferenceID8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">190,423.6</av:Point>
+                      <av:Point x:Key="ShapeLocation">190,513.6</av:Point>
                       <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -432,7 +432,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Flowchart sap:VirtualizedContainerService.HintSize="633.6,772.8" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+                          <Flowchart sap:VirtualizedContainerService.HintSize="633.6,1012.8" sap2010:WorkflowViewState.IdRef="Flowchart_3">
                             <Flowchart.Variables>
                               <Variable x:TypeArguments="x:String" Name="serialNo" />
                               <Variable x:TypeArguments="x:String" Name="VATNo" />
@@ -445,13 +445,15 @@
                               <Variable x:TypeArguments="x:String" Name="dateTransaction" />
                               <Variable x:TypeArguments="sd:DataTable" Name="dtContent" />
                               <Variable x:TypeArguments="x:Boolean" Name="isImposter" />
+                              <Variable x:TypeArguments="x:Int32" Name="pageCount" />
+                              <Variable x:TypeArguments="x:Int32" Name="page" />
                             </Flowchart.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                                 <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-                                <x:Double x:Key="Height">736.4</x:Double>
+                                <x:Double x:Key="Height">976.4</x:Double>
                                 <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,113.6</av:PointCollection>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
@@ -462,9 +464,9 @@
                             <FlowStep x:Name="__ReferenceID0">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,595.6</av:Point>
+                                  <av:Point x:Key="ShapeLocation">200,605.6</av:Point>
                                   <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,664.4 300,683.6</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,674.4 300,693.6</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <Sequence DisplayName="Save Excel templates" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_26">
@@ -643,7 +645,7 @@
                                 <FlowStep x:Name="__ReferenceID3">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">200,683.6</av:Point>
+                                      <av:Point x:Key="ShapeLocation">200,693.6</av:Point>
                                       <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -666,9 +668,9 @@
                             <FlowStep x:Name="__ReferenceID1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,443.6</av:Point>
+                                  <av:Point x:Key="ShapeLocation">200,453.6</av:Point>
                                   <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,496.4 300,515.6</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,506.4 300,525.6</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Close'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
@@ -702,9 +704,9 @@
                                 <FlowStep x:Name="__ReferenceID2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">200,515.6</av:Point>
+                                      <av:Point x:Key="ShapeLocation">200,525.6</av:Point>
                                       <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">300,584.4 300,595.6</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,594.4 300,605.6</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Sequence DisplayName="Preprocess results" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
@@ -1063,7 +1065,7 @@
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">200,195.6</av:Point>
                                   <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,264.4 300,283.6</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,264.4 300,293.6</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <Sequence DisplayName="Open File and Normalize" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
@@ -1133,12 +1135,17 @@
                                 <FlowStep x:Name="__ReferenceID4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">200,283.6</av:Point>
+                                      <av:Point x:Key="ShapeLocation">200,293.6</av:Point>
                                       <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">300,336.4 300,363.6</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,346.4 300,373.6</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="Jj5og8ykBrs8JjCkYv86AENx42HlNjargmGu2OYCxsxEp6Mybn229naoKaff+vyF7gA29svlKJ4EvLCu4e7rVg==" ContinueOnError="True" CvMethod="ElementDetection, OCR" DesignTimeCacheId="90a94144-4baa-4798-a0f9-573a446e74bc" DisplayName="CV Screen Scope 'grouping'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CVScope_6" Version="V5">
+                                  <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" ContinueOnError="True" CvMethod="ElementDetection, OCR" DesignTimeCacheId="90a94144-4baa-4798-a0f9-573a446e74bc" DisplayName="CV Screen Scope 'grouping'" sap:VirtualizedContainerService.HintSize="516.8,4526.4" sap2010:WorkflowViewState.IdRef="CVScope_6" Version="V5">
+                                    <p:CVScope.ApiKey>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_280">cvApiKey</mca:CSharpValue>
+                                      </InArgument>
+                                    </p:CVScope.ApiKey>
                                     <p:CVScope.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
@@ -1208,7 +1215,7 @@
                                           <If sap:VirtualizedContainerService.HintSize="483.2,3866.4" sap2010:WorkflowViewState.IdRef="If_4">
                                             <If.Condition>
                                               <InArgument x:TypeArguments="x:Boolean">
-                                                <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_264">bankName != null &amp;&amp; bankName.ToLower().Trim() == "vietinbank"</mca:CSharpValue>
+                                                <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_278">bankName != null &amp;&amp; bankName.ToLower().Trim().Contains("vietinbank")</mca:CSharpValue>
                                               </InArgument>
                                             </If.Condition>
                                             <If.Then>
@@ -1839,7 +1846,7 @@
                                                 </scg:List>
                                               </uc:CVCache.OcrTexts>
                                             </uc:CVCache>
-                                            <uc:CVCache DisplayName="Main Screen 1" Id="90a94144-4baa-4798-a0f9-573a446e74bc" InformativeScreenshot="72a24720c3a1cefd75354e577d603505" LogicalPosition="11, 191" OcrText="NGAN HANG TMCP CONG THUONG VIET NAM Chi nhanh Branch : TRUNG TAM THE VietinBank Ma so thue Tax code : 0100111948-145 Dia chi Address : KHU NOI CHINH, P NHAN CHINH, Q THANH XUAN, TP HA NOI Dien thoai Contact number : HOA DON GIA TRT GIA TANG VAT INVOICE Ky hieu Imvoice sigm : 1K22TAB Ban the hi¿n hoa don di¿n tur so Invaice No : 28460534 Ngay Date : 08/04/2022 Ten khach hing Customernam : CTY CP DICH VU TRUC TUYEN CONG DONG VIET Dia chi Address : sO 35.DUONG NGUYEN HUE.PHUONG BEN NGHE OUAN l TP HO CHI MINH VIET NAM Ma so thue Tax code : 0305458683 Phuong thurc thanh toan Payment method: CK Dong tien thanh toan Payment currency : VND Ty gia Rate 1 so tham chieu Trans Reference No. : So tham chieu lien quan Related Referemce No. : STT Ten hang hea. dich vy so tai khoan Thanh tien No Description of goods, service Account No. Amount 1 Thu phi dich vu Ngan hang 110002854833 649.802 Thanh tien chua co thue GTGT Ammount without VAT : 649.802 Thue suat GTGT VAT rabe : 10% Tien thue GTGT VAT amount : 64.977 Tong tien thanh toan Total amount : 714.779 So tien bing chu Amount in wands : Bay tram muoi bon nghin bay tram bay muoi chin dong Noi dung Remarks : Ket chuyen phi ngay 07/04/2022 Nguei mua hing Buyer Nguroi ban hang Seller Chu ky so eSignature (neu co ifamy) Ch ky s eSignature Signature Valid Duoc ky boi: Ngan hang Cong Thurong VN - TRUNG TAM THE Ngay ky: 08/04/2022 Tra cun tai Website Search in website : https://einvoice.vietinbank.v Ma tra curu hoa don Invoice code : LMYCQDXIMZ ho¿c Quet QR code de lay hoa don or Scan QR code to get invoice Quy khach co the dang ky sur dung dich vu ngan hang so (iPay cho KHCN/ eFAST cho KHTC) de durge trai nghi¿m quin ly, tra curu diy du HDDT trong giao dich voi VietinBank Customers can register for VietinBank digital banking (iPay for individualsleFAST for organizations) to manage and look up your e-invoices Trang 1/1" Position="11, 191" ScaleFactor="1.25" ScreenshotGuid="e35113fa-363b-459d-bfdd-4c2bd691ac56" ServerVersion="1">
+                                            <uc:CVCache DisplayName="Main Screen 1" Id="90a94144-4baa-4798-a0f9-573a446e74bc" InformativeScreenshot="72a24720c3a1cefd75354e577d603505" LogicalPosition="11, 191" OcrText="NGAN HANG TMCP CONG THUONG VIET NAM Chi nhanh Branch : TRUNG TAM THE VietinBank Ma so thue Tax code : 0100111948-145 Dia chi Address : KHU NOI CHINH, P NHAN CHINH, Q THANH XUAN, TP HA NOI Dien thoai Contact number : HOA DON GIA TRT GIA TANG VAT INVOICE Ky hieu Imvoice sigm : 1K22TAB Ban the hi¿n hoa don di¿n tur so Invaice No : 28460534 Ngay Date : 08/04/2022 Ten khach hing Customernam : CTY CP DICH VU TRUC TUYEN CONG DONG VIET Dia chi Address : sO 35.DUONG NGUYEN HUE.PHUONG BEN NGHE OUAN l TP HO CHI MINH VIET NAM Ma so thue Tax code : 0305458683 Phuong thurc thanh toan Payment method: CK Dong tien thanh toan Payment currency : VND Ty gia Rate 1 so tham chieu Trans Reference No. : So tham chieu lien quan Related Referemce No. : STT Ten hang hea. dich vy so tai khoan Thanh tien No Description of goods, service Account No. Amount 1 Thu phi dich vu Ngan hang 110002854833 649.802 Thanh tien chua co thue GTGT Ammount without VAT : 649.802 Thue suat GTGT VAT rabe : 10% Tien thue GTGT VAT amount : 64.977 Tong tien thanh toan Total amount : 714.779 So tien bing chu Amount in wands : Bay tram muoi bon nghin bay tram bay muoi chin dong Noi dung Remarks : Ket chuyen phi ngay 07/04/2022 Nguei mua hing Buyer Nguroi ban hang Seller Chu ky so eSignature (neu co ifamy) Ch ky s eSignature Signature Valid Duoc ky boi: Ngan hang Cong Thurong VN - TRUNG TAM THE Ngay ky: 08/04/2022 Tra cun tai Website Search in website : https://einvoice.vietinbank.v Ma tra curu hoa don Invoice code : LMYCQDXIMZ ho¿c Quet QR code de lay hoa don or Scan QR code to get invoice Quy khach co the dang ky sur dung dich vu ngan hang so (iPay cho KHCN/ eFAST cho KHTC) de durge trai nghi¿m quin ly, tra curu diy du HDDT trong giao dich voi VietinBank Customers can register for VietinBank digital banking (iPay for individualsleFAST for organizations) to manage and look up your e-invoices Trang 1/1" Position="11, 191" ScaleFactor="1.25" ScreenshotGuid="54bd1027-69a0-44aa-8211-7d7131175352" ServerVersion="1">
                                               <uc:CVCache.CvAnchorRelations>
                                                 <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
                                               </uc:CVCache.CvAnchorRelations>
@@ -2320,7 +2327,12 @@
                                         <ActivityFunc.Argument>
                                           <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
                                         </ActivityFunc.Argument>
-                                        <p1:UiPathScreenOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="Jj5og8ykBrs8JjCkYv86AENx42HlNjargmGu2OYCxsxEp6Mybn229naoKaff+vyF7gA29svlKJ4EvLCu4e7rVg==" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_5" Language="en" Profile="Screen" Scale="1" Timeout="100000">
+                                        <p1:UiPathScreenOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_5" Language="en" Profile="Screen" Scale="1" Timeout="2000">
+                                          <p1:UiPathScreenOCR.ApiKey>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_281">cvApiKey</mca:CSharpValue>
+                                            </InArgument>
+                                          </p1:UiPathScreenOCR.ApiKey>
                                           <p1:UiPathScreenOCR.Image>
                                             <InArgument x:TypeArguments="sd1:Image">
                                               <mca:CSharpValue x:TypeArguments="sd1:Image" sap2010:WorkflowViewState.IdRef="CSharpValue`1_205">Image</mca:CSharpValue>
@@ -2350,9 +2362,9 @@
                                     <FlowStep x:Name="__ReferenceID6">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">200,363.6</av:Point>
+                                          <av:Point x:Key="ShapeLocation">200,373.6</av:Point>
                                           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">300,416.4 300,443.6</av:PointCollection>
+                                          <av:PointCollection x:Key="ConnectorLocation">300,426.4 300,453.6</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_18" Key="esc" KeyModifiers="None" SpecialKey="True">
@@ -2530,7 +2542,7 @@
               </FlowStep.Next>
             </FlowStep>
             <x:Reference>__ReferenceID8</x:Reference>
-            <FlowStep x:Name="__ReferenceID12">
+            <FlowStep x:Name="__ReferenceID13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">190,93.6</av:Point>
@@ -2572,29 +2584,57 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID10">
+                    <FlowStep x:Name="__ReferenceID12">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">190,253.6</av:Point>
                           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">290,306.4 290,330</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">290,306.4 290,343.6</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Logging.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="message">Loading pdf files</InArgument>
-                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_146">logs</mca:CSharpReference>
-                          </InOutArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
+                      <ui:ReadTextFile File="{x:Null}" DisplayName="Read CV key" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_2">
+                        <ui:ReadTextFile.Content>
+                          <OutArgument x:TypeArguments="x:String">
+                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_264">cvApiKey</mca:CSharpReference>
+                          </OutArgument>
+                        </ui:ReadTextFile.Content>
+                        <ui:ReadTextFile.FileName>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_279">"C:\\Users\\"+Environment.UserName +"\\Documents\\UiPath Data\\cv api key.txt"</mca:CSharpValue>
+                          </InArgument>
+                        </ui:ReadTextFile.FileName>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </ui:InvokeWorkflowFile>
+                      </ui:ReadTextFile>
                       <FlowStep.Next>
-                        <x:Reference>__ReferenceID9</x:Reference>
+                        <FlowStep x:Name="__ReferenceID10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">190,343.6</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">290,396.4 290,420</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Logging.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="message">Loading pdf files</InArgument>
+                              <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_146">logs</mca:CSharpReference>
+                              </InOutArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                          <FlowStep.Next>
+                            <x:Reference>__ReferenceID9</x:Reference>
+                          </FlowStep.Next>
+                        </FlowStep>
                       </FlowStep.Next>
                     </FlowStep>
                   </FlowStep.Next>
@@ -2603,6 +2643,7 @@
             </FlowStep>
             <x:Reference>__ReferenceID10</x:Reference>
             <x:Reference>__ReferenceID11</x:Reference>
+            <x:Reference>__ReferenceID12</x:Reference>
           </Flowchart>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log Complete" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Logging.xaml">
             <ui:InvokeWorkflowFile.Arguments>
@@ -2632,7 +2673,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="241.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
