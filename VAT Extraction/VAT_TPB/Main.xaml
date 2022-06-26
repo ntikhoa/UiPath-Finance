@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="795.2,968.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="788,968.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="47">
       <x:String>System.Activities</x:String>
@@ -97,7 +97,6 @@
       <AssemblyReference>Microsoft.Office.Interop.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -852,7 +851,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">300,386.4 300,413.6</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" ContinueOnError="True" CvMethod="ElementDetection, OCR" DesignTimeCacheId="1b02fa56-babe-4a30-8810-9d51918be7f2" DisplayName="CV Screen Scope 'pane'" sap:VirtualizedContainerService.HintSize="516.8,4513.6" sap2010:WorkflowViewState.IdRef="CVScope_7" Version="V5">
+                              <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" ContinueOnError="True" CvMethod="ElementDetection, OCR" DesignTimeCacheId="1b02fa56-babe-4a30-8810-9d51918be7f2" DisplayName="CV Screen Scope 'pane'" sap:VirtualizedContainerService.HintSize="516.8,4429.6" sap2010:WorkflowViewState.IdRef="CVScope_7" Version="V5">
                                 <p:CVScope.ApiKey>
                                   <InArgument x:TypeArguments="x:String">
                                     <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_273">cvApiKey</mca:CSharpValue>
@@ -894,16 +893,6 @@
                                           </scg:List>
                                         </ui:MultipleAssign.AssignOperations>
                                       </ui:MultipleAssign>
-                                      <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_7">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="x:Int32">
-                                            <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_264">timeout</mca:CSharpReference>
-                                          </OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="x:Int32">1000</InArgument>
-                                        </Assign.Value>
-                                      </Assign>
                                       <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="b26d3a5d-3cb7-4bdd-8b7e-00fcf9cef827" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_90" InformativeScreenshot="391b47e5cae3f4badee94b28a0462c79" RefreshBefore="True" Version="V5">
                                         <p:CvGetTextWithDescriptor.Descriptor>
                                           <InArgument x:TypeArguments="uc:CvDescriptor">
