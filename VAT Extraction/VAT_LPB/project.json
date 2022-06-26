@@ -1,11 +1,10 @@
 {
-  "name": "VAT_VCB",
+  "name": "VAT_LPB",
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.12.3]",
     "UiPath.Mail.Activities": "[1.15.2]",
-    "UiPath.PDF.Activities": "[3.6.0]",
     "UiPath.System.Activities": "[22.4.1]",
     "UiPath.UIAutomation.Activities": "[22.4.5]"
   },
@@ -47,7 +46,7 @@
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "92815977-99ef-4c02-afa2-18a995807377",
+      "uniqueId": "d5b86096-9727-4853-ad36-3ce09d6aec48",
       "input": [],
       "output": []
     }

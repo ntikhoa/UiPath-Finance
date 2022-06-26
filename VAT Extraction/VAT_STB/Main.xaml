@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="795.2,968.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="788,968.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="47">
       <x:String>System.Activities</x:String>
@@ -51,7 +51,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="45">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -97,6 +97,7 @@
       <AssemblyReference>Microsoft.Office.Interop.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -785,15 +786,25 @@
                                                       <av:PointCollection x:Key="ConnectorLocation">300,556.4 300,603.6</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="339.2,739.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                                                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="339.2,839.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                                                     <ui:InterruptibleWhile.Body>
-                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,572" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,672" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" ContinueOnError="True" CvMethod="ElementDetection, OCR" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DisplayName="CV Screen Scope 'grouping'" sap:VirtualizedContainerService.HintSize="464,3952" sap2010:WorkflowViewState.IdRef="CVScope_4" Version="V5">
+                                                        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:Boolean">
+                                                              <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_253">isImposter</mca:CSharpReference>
+                                                            </OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                        <p:CVScope DelayBefore="{x:Null}" Server="{x:Null}" ContinueOnError="True" CvMethod="ElementDetection, OCR" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DisplayName="CV Screen Scope 'grouping'" sap:VirtualizedContainerService.HintSize="593.6,4815.2" sap2010:WorkflowViewState.IdRef="CVScope_4" Version="V5">
                                                           <p:CVScope.ApiKey>
                                                             <InArgument x:TypeArguments="x:String">
                                                               <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_191">cvApiKey</mca:CSharpValue>
@@ -807,8 +818,9 @@
                                                               <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                                                 <Sequence.Variables>
                                                                   <Variable x:TypeArguments="x:Int32" Name="timeout" />
+                                                                  <Variable x:TypeArguments="x:String" Name="bankName" />
                                                                 </Sequence.Variables>
-                                                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+                                                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="560,101.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
                                                                   <ui:MultipleAssign.AssignOperations>
                                                                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_56">
@@ -821,431 +833,494 @@
                                                                           <InArgument x:TypeArguments="x:Int32">1000</InArgument>
                                                                         </ui:AssignOperation.Value>
                                                                       </ui:AssignOperation>
-                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_57">
-                                                                        <ui:AssignOperation.To>
-                                                                          <OutArgument x:TypeArguments="x:Boolean">
-                                                                            <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_206">isImposter</mca:CSharpReference>
-                                                                          </OutArgument>
-                                                                        </ui:AssignOperation.To>
-                                                                        <ui:AssignOperation.Value>
-                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                                        </ui:AssignOperation.Value>
-                                                                      </ui:AssignOperation>
                                                                     </scg:List>
                                                                   </ui:MultipleAssign.AssignOperations>
                                                                 </ui:MultipleAssign>
-                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_73" UnSafe="False" WorkflowFileName="Logging.xaml">
-                                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="message">Getting invoice serial number</InArgument>
-                                                                    <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_207">logs</mca:CSharpReference>
-                                                                    </InOutArgument>
-                                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                                </ui:InvokeWorkflowFile>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_35" InformativeScreenshot="cc5b01b4ff0cbd7f6c3750dfc6130bb3" RefreshBefore="True" Version="V5">
+                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="560,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_46" InformativeScreenshot="f0b0132a64a731057b8255ba16730171" RefreshBefore="True" Version="V5">
                                                                   <p:CvGetTextWithDescriptor.Descriptor>
                                                                     <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_195" xml:space="preserve">"Target: AnyText (1172,156,70,18)" +
+                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_236" xml:space="preserve">"Target: AnyText (75,161,270,45)" +
+"Anchor: Text 'Ben ban:' (90,292,99,21)" +
+"Anchor: Text 'HOA DON GIA TRI GIA TANG' (430,113,490,38)"</mca:CSharpValue>
+                                                                    </InArgument>
+                                                                  </p:CvGetTextWithDescriptor.Descriptor>
+                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                    <uc:CvDescriptor Id="2c645d28-1c03-4aa5-b1c9-47cc71dba510">
+                                                                      <uc:CvDescriptor.Anchors>
+                                                                        <x:Array Type="uc:CvElementDescriptor">
+                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="90, 292, 99, 21" ElementType="Text" Text="Ben ban:" />
+                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="430, 113, 490, 38" ElementType="Text" Text="HOA DON GIA TRI GIA TANG" />
+                                                                        </x:Array>
+                                                                      </uc:CvDescriptor.Anchors>
+                                                                      <uc:CvDescriptor.Target>
+                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="75, 161, 270, 45" ElementType="AnyText" />
+                                                                      </uc:CvDescriptor.Target>
+                                                                    </uc:CvDescriptor>
+                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                  <p:CvGetTextWithDescriptor.Result>
+                                                                    <OutArgument x:TypeArguments="x:String">
+                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_255">bankName</mca:CSharpReference>
+                                                                    </OutArgument>
+                                                                  </p:CvGetTextWithDescriptor.Result>
+                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                    <InArgument x:TypeArguments="x:Int32">
+                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_239">timeout</mca:CSharpValue>
+                                                                    </InArgument>
+                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                </p:CvGetTextWithDescriptor>
+                                                                <If sap:VirtualizedContainerService.HintSize="560,4185.6" sap2010:WorkflowViewState.IdRef="If_4">
+                                                                  <If.Condition>
+                                                                    <InArgument x:TypeArguments="x:Boolean">
+                                                                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_237">bankName != null &amp;&amp; bankName.ToLower().Trim().Contains("sacombank")</mca:CSharpValue>
+                                                                    </InArgument>
+                                                                  </If.Condition>
+                                                                  <If.Then>
+                                                                    <Sequence sap:VirtualizedContainerService.HintSize="524.8,3996.8" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                      <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                                                        <Assign.To>
+                                                                          <OutArgument x:TypeArguments="x:Boolean">
+                                                                            <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_256">isImposter</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </Assign.To>
+                                                                        <Assign.Value>
+                                                                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                                        </Assign.Value>
+                                                                      </Assign>
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_73" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="message">Getting invoice serial number</InArgument>
+                                                                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_207">logs</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_35" InformativeScreenshot="cc5b01b4ff0cbd7f6c3750dfc6130bb3" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_195" xml:space="preserve">"Target: AnyText (1172,156,70,18)" +
 "Anchor: Text 'Ky hieu/Serial No:' (1005,156,162,21)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="cbfce3f9-b444-408a-85aa-dd6b396c8945">
-                                                                      <uc:CvDescriptor.Anchors>
-                                                                        <x:Array Type="uc:CvElementDescriptor">
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1005, 156, 162, 21" ElementType="Text" Text="Ky hieu/Serial No:" />
-                                                                        </x:Array>
-                                                                      </uc:CvDescriptor.Anchors>
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1172, 156, 70, 18" ElementType="AnyText" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_208">serialNo</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_194">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_74" UnSafe="False" WorkflowFileName="Logging.xaml">
-                                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="message">Getting invoice number</InArgument>
-                                                                    <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_209">logs</mca:CSharpReference>
-                                                                    </InOutArgument>
-                                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                                </ui:InvokeWorkflowFile>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_36" InformativeScreenshot="84210a357f3ecf8c372ecdbffd75b358" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_197" xml:space="preserve">"Target: AnyText (1152,186,80,17)" +
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="cbfce3f9-b444-408a-85aa-dd6b396c8945">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1005, 156, 162, 21" ElementType="Text" Text="Ky hieu/Serial No:" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1172, 156, 70, 18" ElementType="AnyText" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_208">serialNo</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_194">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_74" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="message">Getting invoice number</InArgument>
+                                                                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_209">logs</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_36" InformativeScreenshot="84210a357f3ecf8c372ecdbffd75b358" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_197" xml:space="preserve">"Target: AnyText (1152,186,80,17)" +
 "Anchor: Text 'so HD/VAT No:' (1005,182,143,21)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="d9bd47b7-78fb-4497-a2cf-efcf4558590e">
-                                                                      <uc:CvDescriptor.Anchors>
-                                                                        <x:Array Type="uc:CvElementDescriptor">
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1005, 182, 143, 21" ElementType="Text" Text="so HD/VAT No:" />
-                                                                        </x:Array>
-                                                                      </uc:CvDescriptor.Anchors>
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1152, 186, 80, 17" ElementType="AnyText" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_210">VATNo</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_196">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_75" UnSafe="False" WorkflowFileName="Logging.xaml">
-                                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="message">Getting date</InArgument>
-                                                                    <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_211">logs</mca:CSharpReference>
-                                                                    </InOutArgument>
-                                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                                </ui:InvokeWorkflowFile>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_37" InformativeScreenshot="37d197d3cb0f323a0a00aa37cf994c8f" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_199" xml:space="preserve">"Target: AnyText (546,226,27,21)" +
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="d9bd47b7-78fb-4497-a2cf-efcf4558590e">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1005, 182, 143, 21" ElementType="Text" Text="so HD/VAT No:" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1152, 186, 80, 17" ElementType="AnyText" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_210">VATNo</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_196">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_75" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="message">Getting date</InArgument>
+                                                                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_211">logs</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_37" InformativeScreenshot="37d197d3cb0f323a0a00aa37cf994c8f" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_199" xml:space="preserve">"Target: AnyText (546,226,27,21)" +
 "Anchor: Text 'Ngay/Date' (420,226,119,26)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="cc889230-653f-436c-b24c-38d7f5458f6a">
-                                                                      <uc:CvDescriptor.Anchors>
-                                                                        <x:Array Type="uc:CvElementDescriptor">
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="420, 226, 119, 26" ElementType="Text" Text="Ngay/Date" />
-                                                                        </x:Array>
-                                                                      </uc:CvDescriptor.Anchors>
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="546, 226, 27, 21" ElementType="AnyText" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_212">day</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_198">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_38" InformativeScreenshot="2c252a7d3e7fd91b4d32be8aa1fecfcf" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_201" xml:space="preserve">"Target: AnyText (728,225,29,21)" +
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="cc889230-653f-436c-b24c-38d7f5458f6a">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="420, 226, 119, 26" ElementType="Text" Text="Ngay/Date" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="546, 226, 27, 21" ElementType="AnyText" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_212">day</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_198">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_38" InformativeScreenshot="2c252a7d3e7fd91b4d32be8aa1fecfcf" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_201" xml:space="preserve">"Target: AnyText (728,225,29,21)" +
 "Anchor: Text 'thang/month' (581,225,140,27)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="b287961d-4d79-45f4-82b7-505a136c8751">
-                                                                      <uc:CvDescriptor.Anchors>
-                                                                        <x:Array Type="uc:CvElementDescriptor">
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="581, 225, 140, 27" ElementType="Text" Text="thang/month" />
-                                                                        </x:Array>
-                                                                      </uc:CvDescriptor.Anchors>
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="728, 225, 29, 21" ElementType="AnyText" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_213">month</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_200">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_39" InformativeScreenshot="f29ad073248b24ffee05abf43b64e3e8" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_203" xml:space="preserve">"Target: AnyText (875,226,56,21)" +
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="b287961d-4d79-45f4-82b7-505a136c8751">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="581, 225, 140, 27" ElementType="Text" Text="thang/month" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="728, 225, 29, 21" ElementType="AnyText" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_213">month</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_200">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_39" InformativeScreenshot="f29ad073248b24ffee05abf43b64e3e8" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_203" xml:space="preserve">"Target: AnyText (875,226,56,21)" +
 "Anchor: Text 'nam/year' (764,226,106,25)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="1482e9e9-8ce2-4671-814b-7a038d58bf98">
-                                                                      <uc:CvDescriptor.Anchors>
-                                                                        <x:Array Type="uc:CvElementDescriptor">
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="764, 226, 106, 25" ElementType="Text" Text="nam/year" />
-                                                                        </x:Array>
-                                                                      </uc:CvDescriptor.Anchors>
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="875, 226, 56, 21" ElementType="AnyText" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_214">year</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_202">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_76" UnSafe="False" WorkflowFileName="Logging.xaml">
-                                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="message">Getting content</InArgument>
-                                                                    <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_215">logs</mca:CSharpReference>
-                                                                    </InOutArgument>
-                                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                                </ui:InvokeWorkflowFile>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Image" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_40" InformativeScreenshot="2a690cccf03800ad7a250fdfddb3e51b" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_205">"Target: Image (85,278,122,84) Offset: (359,3,1024,117)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="5673fefb-9026-420d-bbc0-1a1ec9164aeb" TargetOffset="359, 3, 1024, 117">
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="85, 278, 122, 84" ElementType="Image" ImageBase64="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" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_216">seller</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_204">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_77" UnSafe="False" WorkflowFileName="Logging.xaml">
-                                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="message">Getting tax code</InArgument>
-                                                                    <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_217">logs</mca:CSharpReference>
-                                                                    </InOutArgument>
-                                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                                </ui:InvokeWorkflowFile>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="a7616515-7e0b-4679-8038-cdc2824bc3bb" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Text" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_41" InformativeScreenshot="2402fda69560499618eba105cfbd38d2" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_231">"Target: Text 'MST:' (90,372,59,20) Offset: (361,-12,1014,58)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="df093fc5-c07b-497b-8d9e-41399c226082" TargetOffset="361, -12, 1014, 58">
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="90, 372, 59, 20" ElementType="Text" Text="MST:" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_218">taxCode</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_206">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'grouping'" sap:VirtualizedContainerService.HintSize="430.4,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_13" Key="pgdn" KeyModifiers="None" SpecialKey="True">
-                                                                  <ui:SendHotkey.Target>
-                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1458a3fe-326d-45ac-a26a-ad43ae82cb60" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' omit:title='STB_800_0002896.pdf - Personal - Microsoft​ Edge' /&gt;&lt;ctrl omit:name='STB_800_0002896.pdf' role='document' /&gt;&lt;ctrl idx='5' role='grouping' /&gt;">
-                                                                      <ui:Target.TimeoutMS>
-                                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                                      </ui:Target.TimeoutMS>
-                                                                      <ui:Target.WaitForReady>
-                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                      </ui:Target.WaitForReady>
-                                                                    </ui:Target>
-                                                                  </ui:SendHotkey.Target>
-                                                                </ui:SendHotkey>
-                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_78" UnSafe="False" WorkflowFileName="Logging.xaml">
-                                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="message">Getting content</InArgument>
-                                                                    <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_219">logs</mca:CSharpReference>
-                                                                    </InOutArgument>
-                                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                                </ui:InvokeWorkflowFile>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_42" InformativeScreenshot="5579ef594d3421867536526f50b302a0" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_209" xml:space="preserve">"Target: AnyWordGroup (452,464,642,22)" +
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="1482e9e9-8ce2-4671-814b-7a038d58bf98">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="764, 226, 106, 25" ElementType="Text" Text="nam/year" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="875, 226, 56, 21" ElementType="AnyText" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_214">year</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_202">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_76" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="message">Getting content</InArgument>
+                                                                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_215">logs</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Image" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_40" InformativeScreenshot="2a690cccf03800ad7a250fdfddb3e51b" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_205">"Target: Image (85,278,122,84) Offset: (359,3,1024,117)"</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="5673fefb-9026-420d-bbc0-1a1ec9164aeb" TargetOffset="359, 3, 1024, 117">
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="85, 278, 122, 84" ElementType="Image" ImageBase64="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" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_216">seller</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_204">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_77" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="message">Getting tax code</InArgument>
+                                                                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_217">logs</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="d5347a94-d006-48da-9ead-8af0fac3cfc9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_41" InformativeScreenshot="c2b27a94a1557d5dee4123de28927352" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_238" xml:space="preserve">"Target: Text 'MST:' (89,479,60,22) Offset: (364,7,479,40)" +
+"Anchor: Text 'Tax code:' (90,508,88,18)"</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="f09bb8d8-317b-4bc4-99da-93597cc777cf" TargetOffset="364, 7, 479, 40">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="90, 508, 88, 18" ElementType="Text" Text="Tax code:" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="89, 479, 60, 22" ElementType="Text" Text="MST:" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_218">taxCode</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_206">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'grouping'" sap:VirtualizedContainerService.HintSize="483.2,133.6" sap2010:WorkflowViewState.IdRef="SendHotkey_13" Key="pgdn" KeyModifiers="None" SpecialKey="True">
+                                                                        <ui:SendHotkey.Target>
+                                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1458a3fe-326d-45ac-a26a-ad43ae82cb60" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' omit:title='STB_800_0002896.pdf - Personal - Microsoft​ Edge' /&gt;&lt;ctrl omit:name='STB_800_0002896.pdf' role='document' /&gt;&lt;ctrl idx='5' role='grouping' /&gt;">
+                                                                            <ui:Target.TimeoutMS>
+                                                                              <InArgument x:TypeArguments="x:Int32" />
+                                                                            </ui:Target.TimeoutMS>
+                                                                            <ui:Target.WaitForReady>
+                                                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                            </ui:Target.WaitForReady>
+                                                                          </ui:Target>
+                                                                        </ui:SendHotkey.Target>
+                                                                      </ui:SendHotkey>
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_78" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="message">Getting content</InArgument>
+                                                                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_219">logs</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_42" InformativeScreenshot="5579ef594d3421867536526f50b302a0" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_209" xml:space="preserve">"Target: AnyWordGroup (452,464,642,22)" +
 "Anchor: Text 'Noi dung:' (89,443,109,28)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="b0bafe97-0452-49a8-bd9c-f3bee0bfa6de">
-                                                                      <uc:CvDescriptor.Anchors>
-                                                                        <x:Array Type="uc:CvElementDescriptor">
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="89, 443, 109, 28" ElementType="Text" Text="Noi dung:" />
-                                                                        </x:Array>
-                                                                      </uc:CvDescriptor.Anchors>
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="452, 464, 642, 22" ElementType="AnyWordGroup" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_220">content</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_208">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_79" UnSafe="False" WorkflowFileName="Logging.xaml">
-                                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="message">Getting amount</InArgument>
-                                                                    <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_221">logs</mca:CSharpReference>
-                                                                    </InOutArgument>
-                                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                                </ui:InvokeWorkflowFile>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_43" InformativeScreenshot="681efd39f5082ca4b4e6bb9a68361294" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_211" xml:space="preserve">"Target: AnyText (685,610,112,25)" +
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="b0bafe97-0452-49a8-bd9c-f3bee0bfa6de">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="89, 443, 109, 28" ElementType="Text" Text="Noi dung:" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="452, 464, 642, 22" ElementType="AnyWordGroup" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_220">content</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_208">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_79" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="message">Getting amount</InArgument>
+                                                                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_221">logs</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_43" InformativeScreenshot="681efd39f5082ca4b4e6bb9a68361294" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_211" xml:space="preserve">"Target: AnyText (685,610,112,25)" +
 "Anchor: Text 'Amount:' (88,617,79,18)" +
 "Anchor: Text 'So tien:' (89,584,86,26)" +
 "Anchor: Text 'VND' (803,611,55,21)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="c3640f69-5c70-4d72-8686-abba05967286">
-                                                                      <uc:CvDescriptor.Anchors>
-                                                                        <x:Array Type="uc:CvElementDescriptor">
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="88, 617, 79, 18" ElementType="Text" Text="Amount:" />
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="89, 584, 86, 26" ElementType="Text" Text="So tien:" />
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="803, 611, 55, 21" ElementType="Text" Text="VND" />
-                                                                        </x:Array>
-                                                                      </uc:CvDescriptor.Anchors>
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="685, 610, 112, 25" ElementType="AnyText" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_222">amount</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_210">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_80" UnSafe="False" WorkflowFileName="Logging.xaml">
-                                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="message">Getting VAT rate</InArgument>
-                                                                    <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_223">logs</mca:CSharpReference>
-                                                                    </InOutArgument>
-                                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                                </ui:InvokeWorkflowFile>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_44" InformativeScreenshot="d0f1dcda14a12f843919ec9d657de8d3" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_213" xml:space="preserve">"Target: AnyText (1193,685,48,22)" +
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="c3640f69-5c70-4d72-8686-abba05967286">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="88, 617, 79, 18" ElementType="Text" Text="Amount:" />
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="89, 584, 86, 26" ElementType="Text" Text="So tien:" />
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="803, 611, 55, 21" ElementType="Text" Text="VND" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="685, 610, 112, 25" ElementType="AnyText" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_222">amount</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_210">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_80" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="message">Getting VAT rate</InArgument>
+                                                                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_223">logs</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_44" InformativeScreenshot="d0f1dcda14a12f843919ec9d657de8d3" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_213" xml:space="preserve">"Target: AnyText (1193,685,48,22)" +
 "Anchor: Text 'VAT rate/Tax rate'' (1000,706,165,15)" +
 "Anchor: Text 'Thue suat GTGT:' (968,669,196,25)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="e8f530f7-d292-4cd0-89a0-5a74b3e2b5be">
-                                                                      <uc:CvDescriptor.Anchors>
-                                                                        <x:Array Type="uc:CvElementDescriptor">
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1000, 706, 165, 15" ElementType="Text" Text="VAT rate/Tax rate'" />
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="968, 669, 196, 25" ElementType="Text" Text="Thue suat GTGT:" />
-                                                                        </x:Array>
-                                                                      </uc:CvDescriptor.Anchors>
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1193, 685, 48, 22" ElementType="AnyText" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_224">VATRate</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_212">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
-                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="430.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_81" UnSafe="False" WorkflowFileName="Logging.xaml">
-                                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                                    <InArgument x:TypeArguments="x:String" x:Key="message">Getting VAT amount</InArgument>
-                                                                    <InOutArgument x:TypeArguments="x:String" x:Key="logs">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_225">logs</mca:CSharpReference>
-                                                                    </InOutArgument>
-                                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                                </ui:InvokeWorkflowFile>
-                                                                <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="430.4,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_45" InformativeScreenshot="306ded76003cc50eaa63fb30e817d624" RefreshBefore="True" Version="V5">
-                                                                  <p:CvGetTextWithDescriptor.Descriptor>
-                                                                    <InArgument x:TypeArguments="uc:CvDescriptor">
-                                                                      <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_215" xml:space="preserve">"Target: AnyText (706,686,92,24)" +
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="e8f530f7-d292-4cd0-89a0-5a74b3e2b5be">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1000, 706, 165, 15" ElementType="Text" Text="VAT rate/Tax rate'" />
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="968, 669, 196, 25" ElementType="Text" Text="Thue suat GTGT:" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1193, 685, 48, 22" ElementType="AnyText" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_224">VATRate</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_212">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_81" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="message">Getting VAT amount</InArgument>
+                                                                          <InOutArgument x:TypeArguments="x:String" x:Key="logs">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_225">logs</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <p:CvGetTextWithDescriptor ContinueOnError="True" DesignTimeCacheId="bf1d8e27-3c1f-4eb4-802c-06b5a0d87c4d" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_45" InformativeScreenshot="306ded76003cc50eaa63fb30e817d624" RefreshBefore="True" Version="V5">
+                                                                        <p:CvGetTextWithDescriptor.Descriptor>
+                                                                          <InArgument x:TypeArguments="uc:CvDescriptor">
+                                                                            <mca:CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_215" xml:space="preserve">"Target: AnyText (706,686,92,24)" +
 "Anchor: Text 'VAT:' (91,692,44,18)" +
 "Anchor: Text 'Tien thue GTGT:' (88,660,190,26)" +
 "Anchor: Text 'VND' (802,686,56,21)"</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.Descriptor>
-                                                                  <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                    <uc:CvDescriptor Id="e469a6c6-2e8f-4a52-94fa-d6a45c4ed31b">
-                                                                      <uc:CvDescriptor.Anchors>
-                                                                        <x:Array Type="uc:CvElementDescriptor">
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="91, 692, 44, 18" ElementType="Text" Text="VAT:" />
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="88, 660, 190, 26" ElementType="Text" Text="Tien thue GTGT:" />
-                                                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="802, 686, 56, 21" ElementType="Text" Text="VND" />
-                                                                        </x:Array>
-                                                                      </uc:CvDescriptor.Anchors>
-                                                                      <uc:CvDescriptor.Target>
-                                                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="706, 686, 92, 24" ElementType="AnyText" />
-                                                                      </uc:CvDescriptor.Target>
-                                                                    </uc:CvDescriptor>
-                                                                  </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                                                                  <p:CvGetTextWithDescriptor.Result>
-                                                                    <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_226">VATAmount</mca:CSharpReference>
-                                                                    </OutArgument>
-                                                                  </p:CvGetTextWithDescriptor.Result>
-                                                                  <p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                    <InArgument x:TypeArguments="x:Int32">
-                                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_214">timeout</mca:CSharpValue>
-                                                                    </InArgument>
-                                                                  </p:CvGetTextWithDescriptor.TimeoutMS>
-                                                                </p:CvGetTextWithDescriptor>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.Descriptor>
+                                                                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                          <uc:CvDescriptor Id="e469a6c6-2e8f-4a52-94fa-d6a45c4ed31b">
+                                                                            <uc:CvDescriptor.Anchors>
+                                                                              <x:Array Type="uc:CvElementDescriptor">
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="91, 692, 44, 18" ElementType="Text" Text="VAT:" />
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="88, 660, 190, 26" ElementType="Text" Text="Tien thue GTGT:" />
+                                                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="802, 686, 56, 21" ElementType="Text" Text="VND" />
+                                                                              </x:Array>
+                                                                            </uc:CvDescriptor.Anchors>
+                                                                            <uc:CvDescriptor.Target>
+                                                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="706, 686, 92, 24" ElementType="AnyText" />
+                                                                            </uc:CvDescriptor.Target>
+                                                                          </uc:CvDescriptor>
+                                                                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                                        <p:CvGetTextWithDescriptor.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_226">VATAmount</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </p:CvGetTextWithDescriptor.Result>
+                                                                        <p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_214">timeout</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </p:CvGetTextWithDescriptor.TimeoutMS>
+                                                                      </p:CvGetTextWithDescriptor>
+                                                                    </Sequence>
+                                                                  </If.Then>
+                                                                  <If.Else>
+                                                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </Sequence>
+                                                                  </If.Else>
+                                                                </If>
                                                               </Sequence>
                                                             </ActivityAction>
                                                           </p:CVScope.Body>
@@ -1255,8 +1330,8 @@
                                                           <p:CVScope.DesignTimeCacheContainer>
                                                             <uc:CvCacheContainer>
                                                               <uc:CvCacheContainer.Caches>
-                                                                <scg:List x:TypeArguments="uc:CVCache" Capacity="3">
-                                                                  <uc:CVCache DisplayName="Main Screen" Id="d5347a94-d006-48da-9ead-8af0fac3cfc9" InformativeScreenshot="a68326060f2e598b0813066c751bf7e7" LogicalPosition="0, 128" OcrText="1 of 1 - + Page view Read aloud T Add text Draw v Highlight v Erase HOA DON GIA TRI GIA TANG Mau so/Form: 01GTKT0/004 VAT INVOICE Ky hieu/Serial No: AA/22E Sacombank (Thu nhap khac) so HD/VAT No: 0002894 Ngay/Date 21 thang/month 03 nam/year 2022 so GD/Ref No: TT220808XCFH Ben ban: NGAN HANG TMCP SAI GON THUONG TIN Seller: HOI SO SACOMBANK Dia chi: 266-268 NAM KY KHOI NGHIA P.VO THI SAU, QUAN 3, TP. HO CHI MINH VIET Address: NAM MST: Tax code: 0301103908 Ben mua: CONG TY CO PHAN DICH VU TRUC TUYEN Ma KH: Buyer: 1475207 CONG DONGVVIET Customer code: Dia chi: sO 35 NGUYEN HUE. PHUONG BEN NGHE QUAN 1, THANH PHO HO CHI MINH Address:" Position="0, 128" ScaleFactor="1.25" ScreenshotGuid="19df83ca-991e-4650-b305-ea4b6fe81183" ServerVersion="1">
+                                                                <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                                                                  <uc:CVCache DisplayName="Screen CV Get Text - '' (Main)" Id="d5347a94-d006-48da-9ead-8af0fac3cfc9" InformativeScreenshot="a68326060f2e598b0813066c751bf7e7" LogicalPosition="0, 128" OcrText="1 of 1 - + Page view Read aloud T Add text Draw v Highlight v Erase HOA DON GIA TRI GIA TANG Mau so/Form: 01GTKT0/004 VAT INVOICE Ky hieu/Serial No: AA/22E Sacombank (Thu nhap khac) so HD/VAT No: 0002894 Ngay/Date 21 thang/month 03 nam/year 2022 so GD/Ref No: TT220808XCFH Ben ban: NGAN HANG TMCP SAI GON THUONG TIN Seller: HOI SO SACOMBANK Dia chi: 266-268 NAM KY KHOI NGHIA P.VO THI SAU, QUAN 3, TP. HO CHI MINH VIET Address: NAM MST: Tax code: 0301103908 Ben mua: CONG TY CO PHAN DICH VU TRUC TUYEN Ma KH: Buyer: 1475207 CONG DONGVVIET Customer code: Dia chi: sO 35 NGUYEN HUE. PHUONG BEN NGHE QUAN 1, THANH PHO HO CHI MINH Address:" Position="0, 128" ScaleFactor="1.25" ScreenshotGuid="19df83ca-991e-4650-b305-ea4b6fe81183" ServerVersion="1">
                                                                     <uc:CVCache.CvAnchorRelations>
                                                                       <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
                                                                     </uc:CVCache.CvAnchorRelations>
@@ -1632,213 +1707,6 @@
                                                                       </scg:List>
                                                                     </uc:CVCache.OcrTexts>
                                                                   </uc:CVCache>
-                                                                  <uc:CVCache DisplayName="Screen CV Get Text - ''" Id="a7616515-7e0b-4679-8038-cdc2824bc3bb" InformativeScreenshot="f327f1b6a99c36e62878482cf10b5038" LogicalPosition="0, 128" OcrText="1 of 1 - + Page view A Read aloud T Add text Draw v Highlight v Erase VAT INVOICE Ky hieu/Serial No: NG/22E Sacombank (Thu phi tup dong: IB, MB, Lai vay,...) So HD/VAT No: 0045601 Ngay/Date 01 thang/month 03 nam/year 2022 So GD/Ref No: FT220600QB9W Ben ban: NGAN HANG TMCP SAI GON THUONG TIN Seller: CHI NHANH TAN DINH Dia chi: Address: 247-247 BIS-249 HAI BA TRUNG, P.6, Q.3, TP.HO CHI MINH VIET NAM MST: Tax code: 0301103908-207 Ben mua: CTY CP DV TRUC TUYEN CONG DONG Ma KH: Buyer: 1475207 VTET Customer code. Dia chi: SO 35 DUONG NGUYEN HUE P BEN NGHE QUAN 1 TP HO CHI MINH VIETNAM Address:" Position="0, 128" ScaleFactor="1.25" ScreenshotGuid="d3b62459-2272-436a-9ed1-b00ac05ff05d" ServerVersion="1">
-                                                                    <uc:CVCache.CvAnchorRelations>
-                                                                      <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
-                                                                    </uc:CVCache.CvAnchorRelations>
-                                                                    <uc:CVCache.CvUiElements>
-                                                                      <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="128">
-                                                                        <uc:CvElementInfo Category="Icon" Region="1483, 8, 22, 23" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="1356, 10, 20, 20" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="489, 10, 22, 22" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="1314, 10, 22, 20" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="12, 10, 24, 19" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="1444, 10, 20, 20" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="1394, 10, 21, 20" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="1080, 9, 21, 22" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="140, 11, 20, 20" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="529, 12, 20, 16" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="581, 10, 23, 20" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="1219, 9, 22, 22" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="847, 11, 21, 18" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="966, 8, 22, 23" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="448, 9, 22, 21" />
-                                                                        <uc:CvElementInfo Category="ArrowButton" Region="1518, 1, 16, 15" />
-                                                                        <uc:CvElementInfo Category="ArrowButton" Region="1184, 13, 16, 16" />
-                                                                        <uc:CvElementInfo Category="ArrowButton" Region="1518, 706, 16, 15" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="710, 9, 23, 21" />
-                                                                        <uc:CvElementInfo Category="Button" Region="50, 3, 43, 34" />
-                                                                        <uc:CvElementInfo Category="MinimizeButton" Region="408, 10, 23, 18" />
-                                                                        <uc:CvElementInfo Category="Icon" Region="64, 12, 14, 17" />
-                                                                        <uc:CvElementInfo Category="InputBox" Region="50, 2, 43, 34" />
-                                                                        <uc:CvElementInfo Category="Cell" Region="51, 316, 371, 48" />
-                                                                        <uc:CvElementInfo Category="Cell" Region="61, 431, 372, 42" />
-                                                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="408, 12, 23, 16" />
-                                                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="99, 12, 24, 18" />
-                                                                        <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="574, 7, 117, 27" />
-                                                                        <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="1469, 549, 28, 24" />
-                                                                        <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="228, 36, 1264, 684" />
-                                                                        <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="3, 3, 46, 35" />
-                                                                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="112, 12, 13, 16" />
-                                                                        <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="536, 308, 956, 410" />
-                                                                        <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="703, 7, 125, 28" />
-                                                                        <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="1219, 9, 23, 22" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="52, 260, 352, 34" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="61, 370, 355, 32" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="60, 203, 344, 43" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="63, 497, 315, 53" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="66, 184, 341, 49" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="50, 292, 358, 31" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="200, 468, 152, 84" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="53, 388, 360, 44" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="57, 240, 382, 40" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="44, 473, 391, 36" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="87, 171, 310, 123" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="63, 558, 380, 34" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="40, 250, 390, 72" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="164, 154, 176, 107" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="152, 294, 195, 27" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="39, 408, 399, 43" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="164, 235, 444, 44" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="204, 519, 150, 86" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="182, 217, 208, 22" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="136, 372, 255, 22" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="140, 352, 188, 111" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="203, 511, 179, 24" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="150, 544, 181, 76" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="196, 230, 186, 21" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="157, 256, 199, 24" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="208, 407, 167, 24" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="201, 524, 180, 22" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="200, 576, 142, 28" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="198, 550, 184, 24" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="196, 400, 156, 112" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="168, 243, 188, 24" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="49, 586, 332, 40" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="196, 499, 149, 28" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="188, 334, 165, 105" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="89, 384, 132, 90" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="836, 4, 120, 36" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="71, 98, 496, 88" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="200, 474, 146, 30" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="200, 538, 183, 23" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="69, 567, 356, 41" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="70, 474, 140, 80" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="161, 269, 226, 21" />
-                                                                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="81, 111, 366, 41" />
-                                                                        <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="972, 8, 92, 27" />
-                                                                        <uc:CvElementInfo Category="ArrowButton" Region="1044, 13, 16, 16" />
-                                                                      </scg:List>
-                                                                    </uc:CVCache.CvUiElements>
-                                                                    <uc:CVCache.OcrTexts>
-                                                                      <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="128">
-                                                                        <uc:OcrTextInfo Region="67, 14, 8, 12" Text="1" />
-                                                                        <uc:OcrTextInfo Region="100, 15, 13, 11" Text="of" />
-                                                                        <uc:OcrTextInfo Region="116, 15, 5, 11" Text="1" />
-                                                                        <uc:OcrTextInfo Region="410, 10, 19, 14" Text="-" />
-                                                                        <uc:OcrTextInfo Region="451, 12, 16, 16" Text="+" />
-                                                                        <uc:OcrTextInfo Region="612, 14, 31, 15" Text="Page" />
-                                                                        <uc:OcrTextInfo Region="646, 15, 28, 12" Text="view" />
-                                                                        <uc:OcrTextInfo Region="712, 12, 17, 15" Text="A" />
-                                                                        <uc:OcrTextInfo Region="741, 13, 31, 13" Text="Read" />
-                                                                        <uc:OcrTextInfo Region="775, 13, 36, 12" Text="aloud" />
-                                                                        <uc:OcrTextInfo Region="853, 16, 7, 9" Text="T" />
-                                                                        <uc:OcrTextInfo Region="876, 13, 27, 13" Text="Add" />
-                                                                        <uc:OcrTextInfo Region="906, 14, 25, 12" Text="text" />
-                                                                        <uc:OcrTextInfo Region="996, 14, 34, 12" Text="Draw" />
-                                                                        <uc:OcrTextInfo Region="1048, 17, 10, 7" Text="v" />
-                                                                        <uc:OcrTextInfo Region="1110, 13, 59, 16" Text="Highlight" />
-                                                                        <uc:OcrTextInfo Region="1187, 17, 10, 8" Text="v" />
-                                                                        <uc:OcrTextInfo Region="1250, 14, 33, 12" Text="Erase" />
-                                                                        <uc:OcrTextInfo Region="596, 52, 52, 21" Text="VAT" />
-                                                                        <uc:OcrTextInfo Region="652, 52, 105, 20" Text="INVOICE" />
-                                                                        <uc:OcrTextInfo Region="1006, 48, 24, 22" Text="Ky" />
-                                                                        <uc:OcrTextInfo Region="1035, 48, 98, 21" Text="hieu/Serial" />
-                                                                        <uc:OcrTextInfo Region="1136, 48, 32, 17" Text="No:" />
-                                                                        <uc:OcrTextInfo Region="1172, 48, 73, 18" Text="NG/22E" />
-                                                                        <uc:OcrTextInfo Region="76, 53, 279, 45" Text="Sacombank" />
-                                                                        <uc:OcrTextInfo Region="457, 80, 56, 27" Text="(Thu" />
-                                                                        <uc:OcrTextInfo Region="517, 81, 44, 26" Text="phi" />
-                                                                        <uc:OcrTextInfo Region="564, 82, 30, 24" Text="tup" />
-                                                                        <uc:OcrTextInfo Region="597, 81, 71, 26" Text="dong:" />
-                                                                        <uc:OcrTextInfo Region="673, 81, 32, 24" Text="IB," />
-                                                                        <uc:OcrTextInfo Region="713, 81, 45, 24" Text="MB," />
-                                                                        <uc:OcrTextInfo Region="767, 81, 39, 20" Text="Lai" />
-                                                                        <uc:OcrTextInfo Region="808, 82, 82, 25" Text="vay,...)" />
-                                                                        <uc:OcrTextInfo Region="1005, 75, 26, 21" Text="So" />
-                                                                        <uc:OcrTextInfo Region="1036, 78, 76, 17" Text="HD/VAT" />
-                                                                        <uc:OcrTextInfo Region="1116, 79, 31, 17" Text="No:" />
-                                                                        <uc:OcrTextInfo Region="1152, 79, 78, 17" Text="0045601" />
-                                                                        <uc:OcrTextInfo Region="420, 119, 119, 27" Text="Ngay/Date" />
-                                                                        <uc:OcrTextInfo Region="545, 119, 27, 20" Text="01" />
-                                                                        <uc:OcrTextInfo Region="579, 118, 141, 27" Text="thang/month" />
-                                                                        <uc:OcrTextInfo Region="727, 119, 30, 20" Text="03" />
-                                                                        <uc:OcrTextInfo Region="763, 119, 108, 25" Text="nam/year" />
-                                                                        <uc:OcrTextInfo Region="875, 119, 57, 21" Text="2022" />
-                                                                        <uc:OcrTextInfo Region="1005, 105, 26, 21" Text="So" />
-                                                                        <uc:OcrTextInfo Region="1036, 108, 71, 18" Text="GD/Ref" />
-                                                                        <uc:OcrTextInfo Region="1109, 108, 32, 17" Text="No:" />
-                                                                        <uc:OcrTextInfo Region="1147, 108, 152, 18" Text="FT220600QB9W" />
-                                                                        <uc:OcrTextInfo Region="90, 184, 45, 22" Text="Ben" />
-                                                                        <uc:OcrTextInfo Region="141, 185, 48, 21" Text="ban:" />
-                                                                        <uc:OcrTextInfo Region="453, 196, 73, 22" Text="NGAN" />
-                                                                        <uc:OcrTextInfo Region="532, 196, 74, 21" Text="HANG" />
-                                                                        <uc:OcrTextInfo Region="612, 196, 72, 21" Text="TMCP" />
-                                                                        <uc:OcrTextInfo Region="691, 196, 41, 21" Text="SAI" />
-                                                                        <uc:OcrTextInfo Region="740, 196, 57, 22" Text="GON" />
-                                                                        <uc:OcrTextInfo Region="804, 196, 108, 22" Text="THUONG" />
-                                                                        <uc:OcrTextInfo Region="918, 196, 42, 21" Text="TIN" />
-                                                                        <uc:OcrTextInfo Region="90, 212, 57, 18" Text="Seller:" />
-                                                                        <uc:OcrTextInfo Region="452, 249, 44, 22" Text="CHI" />
-                                                                        <uc:OcrTextInfo Region="504, 249, 90, 21" Text="NHANH" />
-                                                                        <uc:OcrTextInfo Region="600, 250, 51, 20" Text="TAN" />
-                                                                        <uc:OcrTextInfo Region="658, 250, 61, 20" Text="DINH" />
-                                                                        <uc:OcrTextInfo Region="88, 295, 39, 24" Text="Dia" />
-                                                                        <uc:OcrTextInfo Region="134, 296, 39, 21" Text="chi:" />
-                                                                        <uc:OcrTextInfo Region="88, 323, 81, 18" Text="Address:" />
-                                                                        <uc:OcrTextInfo Region="453, 316, 94, 21" Text="247-247" />
-                                                                        <uc:OcrTextInfo Region="553, 316, 90, 21" Text="BIS-249" />
-                                                                        <uc:OcrTextInfo Region="652, 316, 41, 21" Text="HAI" />
-                                                                        <uc:OcrTextInfo Region="700, 316, 35, 21" Text="BA" />
-                                                                        <uc:OcrTextInfo Region="740, 316, 96, 24" Text="TRUNG," />
-                                                                        <uc:OcrTextInfo Region="844, 316, 44, 24" Text="P.6," />
-                                                                        <uc:OcrTextInfo Region="897, 316, 45, 24" Text="Q.3," />
-                                                                        <uc:OcrTextInfo Region="949, 316, 79, 22" Text="TP.HO" />
-                                                                        <uc:OcrTextInfo Region="1035, 316, 44, 20" Text="CHI" />
-                                                                        <uc:OcrTextInfo Region="1085, 316, 64, 20" Text="MINH" />
-                                                                        <uc:OcrTextInfo Region="1156, 316, 58, 21" Text="VIET" />
-                                                                        <uc:OcrTextInfo Region="1220, 316, 56, 21" Text="NAM" />
-                                                                        <uc:OcrTextInfo Region="90, 372, 59, 20" Text="MST:" />
-                                                                        <uc:OcrTextInfo Region="91, 400, 34, 17" Text="Tax" />
-                                                                        <uc:OcrTextInfo Region="128, 400, 50, 18" Text="code:" />
-                                                                        <uc:OcrTextInfo Region="452, 383, 192, 21" Text="0301103908-207" />
-                                                                        <uc:OcrTextInfo Region="89, 478, 45, 20" Text="Ben" />
-                                                                        <uc:OcrTextInfo Region="141, 482, 56, 16" Text="mua:" />
-                                                                        <uc:OcrTextInfo Region="453, 486, 52, 21" Text="CTY" />
-                                                                        <uc:OcrTextInfo Region="510, 487, 36, 21" Text="CP" />
-                                                                        <uc:OcrTextInfo Region="553, 487, 36, 20" Text="DV" />
-                                                                        <uc:OcrTextInfo Region="595, 487, 70, 20" Text="TRUC" />
-                                                                        <uc:OcrTextInfo Region="671, 487, 87, 21" Text="TUYEN" />
-                                                                        <uc:OcrTextInfo Region="765, 487, 75, 21" Text="CONG" />
-                                                                        <uc:OcrTextInfo Region="848, 487, 75, 20" Text="DONG" />
-                                                                        <uc:OcrTextInfo Region="1082, 489, 35, 21" Text="Ma" />
-                                                                        <uc:OcrTextInfo Region="1123, 489, 42, 20" Text="KH:" />
-                                                                        <uc:OcrTextInfo Region="89, 505, 59, 21" Text="Buyer:" />
-                                                                        <uc:OcrTextInfo Region="1195, 499, 97, 21" Text="1475207" />
-                                                                        <uc:OcrTextInfo Region="452, 516, 64, 21" Text="VTET" />
-                                                                        <uc:OcrTextInfo Region="1023, 517, 90, 18" Text="Customer" />
-                                                                        <uc:OcrTextInfo Region="1116, 518, 49, 17" Text="code." />
-                                                                        <uc:OcrTextInfo Region="88, 556, 39, 24" Text="Dia" />
-                                                                        <uc:OcrTextInfo Region="134, 556, 40, 21" Text="chi:" />
-                                                                        <uc:OcrTextInfo Region="452, 564, 37, 21" Text="SO" />
-                                                                        <uc:OcrTextInfo Region="496, 565, 29, 20" Text="35" />
-                                                                        <uc:OcrTextInfo Region="533, 564, 93, 20" Text="DUONG" />
-                                                                        <uc:OcrTextInfo Region="632, 564, 108, 21" Text="NGUYEN" />
-                                                                        <uc:OcrTextInfo Region="748, 564, 52, 21" Text="HUE" />
-                                                                        <uc:OcrTextInfo Region="808, 565, 16, 20" Text="P" />
-                                                                        <uc:OcrTextInfo Region="832, 564, 51, 20" Text="BEN" />
-                                                                        <uc:OcrTextInfo Region="891, 564, 72, 20" Text="NGHE" />
-                                                                        <uc:OcrTextInfo Region="970, 564, 73, 21" Text="QUAN" />
-                                                                        <uc:OcrTextInfo Region="1052, 564, 10, 20" Text="1" />
-                                                                        <uc:OcrTextInfo Region="1071, 564, 33, 20" Text="TP" />
-                                                                        <uc:OcrTextInfo Region="1111, 564, 38, 20" Text="HO" />
-                                                                        <uc:OcrTextInfo Region="1155, 564, 44, 21" Text="CHI" />
-                                                                        <uc:OcrTextInfo Region="1205, 564, 64, 21" Text="MINH" />
-                                                                        <uc:OcrTextInfo Region="1276, 564, 113, 21" Text="VIETNAM" />
-                                                                        <uc:OcrTextInfo Region="88, 584, 81, 18" Text="Address:" />
-                                                                      </scg:List>
-                                                                    </uc:CVCache.OcrTexts>
-                                                                  </uc:CVCache>
                                                                 </scg:List>
                                                               </uc:CvCacheContainer.Caches>
                                                             </uc:CvCacheContainer>
@@ -2173,7 +2041,7 @@
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_94" UnSafe="False" WorkflowFileName="Logging.xaml">
+                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logging workflow" sap:VirtualizedContainerService.HintSize="872.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_94" UnSafe="False" WorkflowFileName="Logging.xaml">
                                                             <ui:InvokeWorkflowFile.Arguments>
                                                               <InArgument x:TypeArguments="x:String" x:Key="message">
                                                                 <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_226">"Saving: " + excelName</mca:CSharpValue>
@@ -2183,7 +2051,7 @@
                                                               </InOutArgument>
                                                             </ui:InvokeWorkflowFile.Arguments>
                                                           </ui:InvokeWorkflowFile>
-                                                          <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                          <Assign sap:VirtualizedContainerService.HintSize="872.8,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                                                             <Assign.To>
                                                               <OutArgument x:TypeArguments="x:String">
                                                                 <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_250">pdfName</mca:CSharpReference>
@@ -2195,44 +2063,81 @@
                                                               </InArgument>
                                                             </Assign.Value>
                                                           </Assign>
-                                                          <If sap:VirtualizedContainerService.HintSize="483.2,341.6" sap2010:WorkflowViewState.IdRef="If_2">
+                                                          <If sap:VirtualizedContainerService.HintSize="872.8,593.6" sap2010:WorkflowViewState.IdRef="If_3">
                                                             <If.Condition>
                                                               <InArgument x:TypeArguments="x:Boolean">
-                                                                <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_232">pageCount &gt; 1</mca:CSharpValue>
+                                                                <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_234">isImposter</mca:CSharpValue>
                                                               </InArgument>
                                                             </If.Condition>
                                                             <If.Then>
-                                                              <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                                                                   <Assign.To>
                                                                     <OutArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_252">pdfName</mca:CSharpReference>
+                                                                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_254">pdfName</mca:CSharpReference>
                                                                     </OutArgument>
                                                                   </Assign.To>
                                                                   <Assign.Value>
                                                                     <InArgument x:TypeArguments="x:String">
-                                                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_233">pdfName + " (page: " + page + ")"</mca:CSharpValue>
+                                                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_235">pdfName + " (invalid TPBank file)"</mca:CSharpValue>
                                                                     </InArgument>
                                                                   </Assign.Value>
                                                                 </Assign>
                                                               </Sequence>
                                                             </If.Then>
                                                             <If.Else>
-                                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="524.8,434.4" sap2010:WorkflowViewState.IdRef="Sequence_40">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
+                                                                <If sap:VirtualizedContainerService.HintSize="483.2,341.6" sap2010:WorkflowViewState.IdRef="If_2">
+                                                                  <If.Condition>
+                                                                    <InArgument x:TypeArguments="x:Boolean">
+                                                                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_232">pageCount &gt; 1</mca:CSharpValue>
+                                                                    </InArgument>
+                                                                  </If.Condition>
+                                                                  <If.Then>
+                                                                    <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                                        <Assign.To>
+                                                                          <OutArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_252">pdfName</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </Assign.To>
+                                                                        <Assign.Value>
+                                                                          <InArgument x:TypeArguments="x:String">
+                                                                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_233">pdfName + " (page: " + page + ")"</mca:CSharpValue>
+                                                                          </InArgument>
+                                                                        </Assign.Value>
+                                                                      </Assign>
+                                                                    </Sequence>
+                                                                  </If.Then>
+                                                                  <If.Else>
+                                                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </Sequence>
+                                                                  </If.Else>
+                                                                </If>
                                                               </Sequence>
                                                             </If.Else>
                                                           </If>
-                                                          <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="483.2,188" sap2010:WorkflowViewState.IdRef="AddDataRow_4">
+                                                          <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="872.8,188" sap2010:WorkflowViewState.IdRef="AddDataRow_4">
                                                             <ui:AddDataRow.ArrayRow>
                                                               <InArgument x:TypeArguments="s:Object[]">
                                                                 <mca:CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_228">new Object[] {"", serialNo, VATNo, dateTransaction, seller, taxCode, content, amount, VATRate, VATAmount, pdfName}</mca:CSharpValue>
@@ -2244,7 +2149,7 @@
                                                               </InOutArgument>
                                                             </ui:AddDataRow.DataTable>
                                                           </ui:AddDataRow>
-                                                          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="483.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1">
+                                                          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="872.8,116" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1">
                                                             <ui:WriteRange.DataTable>
                                                               <InArgument x:TypeArguments="sd1:DataTable">
                                                                 <mca:CSharpValue x:TypeArguments="sd1:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_229">dt</mca:CSharpValue>
